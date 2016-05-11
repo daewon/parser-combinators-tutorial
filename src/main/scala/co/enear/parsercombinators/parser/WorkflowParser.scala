@@ -16,7 +16,6 @@ object WorkflowParser extends Parsers {
     override def rest: Reader[WorkflowToken] = new WorkflowTokenReader(tokens.tail)
   }
 
-
   def apply(tokens: Seq[WorkflowToken]): Either[WorkflowParserError, WorkflowAST] = {
     val reader = new WorkflowTokenReader(tokens)
     program(reader) match {

@@ -1,0 +1,12 @@
+<block> ::= (<statement>)+
+
+<statement> ::= "exit"
+              | "read input" (<identifier> ",")* <identifier>
+              | "call service" <stringLiteral>
+              | "switch" ":" INDENT (<ifThen>)+ [otherwiseThen] DEDENT
+
+<ifThen> ::= <condition> "->" INDENT <block> DEDENT
+
+<otherwiseThen> ::= "otherwise" "->" INDENT <block> DEDENT
+
+<condition> ::= <identifier> "==" <stringLiteral>
