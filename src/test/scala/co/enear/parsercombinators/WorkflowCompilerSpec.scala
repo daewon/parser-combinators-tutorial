@@ -58,9 +58,6 @@ class WorkflowCompilerSpec extends FlatSpec with Matchers {
 
   val errorMsg = WorkflowParserError(Location(3,14), "string literal expected")
 
-
-
-
   "Workflow compiler" should "successfully parse a valid workflow" in {
     WorkflowCompiler(validCode) shouldBe Right(successfulAST)
   }
